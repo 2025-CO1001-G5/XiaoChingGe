@@ -25,7 +25,16 @@ class Window:
         self.app.grid_rowconfigure(0, weight=1)
         self.app.grid_columnconfigure(0, weight=1)
 
-    def page1(self):
+    def generate(self):
+        self.generate_page1()
+        self.generate_page2()
+        self.generate_page3()
+        self.page1.tkraise()
+
+    def mainloop(self):
+        self.app.mainloop()
+
+    def generate_page1(self):
         # ===== 第1頁：主選單 =====
         label1 = ctk.CTkLabel(self.page1, text="🏠 PIANO MASTER", font=ctk.CTkFont(size=64, weight="bold"))
         label1.pack(pady=60)
@@ -37,10 +46,9 @@ class Window:
         btn_help = ctk.CTkButton(self.page1, text="使用說明", width=350, height=100, font=ctk.CTkFont(size=32),
                                  command=lambda: self.page2.tkraise())
         btn_help.pack(pady=20)
-
         return
 
-    def page2(self):
+    def generate_page2(self):
         label2 = ctk.CTkLabel(self.page2, text="📖 使用說明", font=ctk.CTkFont(size=64, weight="bold"))
         label2.pack(pady=40)
 
@@ -83,7 +91,7 @@ class Window:
 
         return
 
-    def page3(self):
+    def generate_page3(self):
         label3 = ctk.CTkLabel(self.page3, text="🎹 Let's PLAY !!!", font=ctk.CTkFont(size=64, weight="bold"))
         label3.pack(pady=30)
 
