@@ -1,4 +1,4 @@
-from src.app.frontend.window import Window
+from src.app.frontend.ui import Window
 
 window = Window()
 
