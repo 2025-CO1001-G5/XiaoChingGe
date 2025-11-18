@@ -139,6 +139,12 @@ class Window:
         self.app.bind("<KeyPress>", on_key_press)
 
         # 回主選單
-        btn_home = ctk.CTkButton(self.page3, text="Home", width=280, height=80, font=ctk.CTkFont(size=32),
-                                 command=lambda: self.page1.tkraise())
+        btn_home = ctk.CTkButton(
+            self.page3,
+            text="Home",
+            width=280,
+            height=80,
+            font=ctk.CTkFont(size=32),
+            command=lambda: self.page1.tkraise()
+        )
         btn_home.pack(pady=30)
